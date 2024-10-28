@@ -1,0 +1,108 @@
+{
+  "info": {
+    "_postman_id": "a1234567-89ab-cdef-1234-56789abcdef0",
+    "name": "API Security Tests",
+    "description": "Collection of tests for API security including HTTPS enforcement, JWT validation, rate limiting, and scans.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Check HTTPS Enforcement",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://reqres.in/api",
+          "protocol": "https",
+          "host": ["reqres", "in"],
+          "path": ["api"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Validate JWT Token",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"token\":\"your_jwt_token_here\"}"
+        },
+        "url": {
+          "raw": "https://reqres.in/api/validate-token",
+          "protocol": "https",
+          "host": ["reqres", "in"],
+          "path": ["api", "validate-token"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Test Rate Limiting",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer your_api_key_here"
+          }
+        ],
+        "url": {
+          "raw": "https://reqres.in/api/rate-limit-test",
+          "protocol": "https",
+          "host": ["reqres", "in"],
+          "path": ["api", "rate-limit-test"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Run OWASP ZAP Scan",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://reqres.in/api/zap-scan",
+          "protocol": "https",
+          "host": ["reqres", "in"],
+          "path": ["api", "zap-scan"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Run Nmap Scan",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://reqres.in/api/nmap-scan",
+          "protocol": "https",
+          "host": ["reqres", "in"],
+          "path": ["api", "nmap-scan"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Run SSLyze Scan",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://reqres.in/api/sslyze-scan",
+          "protocol": "https",
+          "host": ["reqres", "in"],
+          "path": ["api", "sslyze-scan"]
+        }
+      },
+      "response": []
+    }
+  ]
+}
